@@ -29,4 +29,12 @@ public class Shop_List {
     this.price = price;
   }
 
+  @Override
+  public String toString() {
+    return "Shop_List{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", price=" + price +
+            '}';
+  }
 }

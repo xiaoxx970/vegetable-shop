@@ -38,4 +38,13 @@ public class Shop_Cart {
     this.total = total;
   }
 
+  @Override
+  public String toString() {
+    return "Shop_Cart{" +
+            "userid=" + userid +
+            ", name='" + name + '\'' +
+            ", quantity=" + quantity +
+            ", total=" + total +
+            '}';
+  }
 }

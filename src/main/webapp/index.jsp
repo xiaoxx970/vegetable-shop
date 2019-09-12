@@ -5,10 +5,18 @@
   Time: 20:45
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"  isELIgnored="false" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://"
+            + request.getServerName() + ":" + request.getServerPort()
+            + path + "/";
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
+    <base href="<%=basePath%>">
     <title>Home</title>
     <meta charset="utf-8" />
     <meta name="description" content="" />
@@ -17,6 +25,11 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script>
+        window.onload=function(){
+            window.location.href="/selectProduct/selectAllProduct"
+        }
+    </script>
 </head>
 <body class="animsition animsition">
 <div class="home-1" id="page">
@@ -178,9 +191,9 @@
                                 </div>
                                 <figcaption class="desc">
                                     <h3>
-                                        <a class="product-name" href="#">Salad</a>
+                                        <a class="product-name" href="#">${products[0].name}</a>
                                     </h3>
-                                    <span class="price">$2.00</span>
+                                    <span class="price">$${products[0].price}</span>
                                 </figcaption>
                             </div>
                         </div>
@@ -213,9 +226,9 @@
                                 </div>
                                 <figcaption class="desc">
                                     <h3>
-                                        <a class="product-name" href="#">Bean</a>
+                                        <a class="product-name" href="#">${products[1].name}</a>
                                     </h3>
-                                    <span class="price">$3.20</span>
+                                    <span class="price">$${products[1].price}</span>
                                 </figcaption>
                             </div>
                         </div>
@@ -248,9 +261,9 @@
                                 </div>
                                 <figcaption class="desc">
                                     <h3>
-                                        <a class="product-name" href="#">Spinach</a>
+                                        <a class="product-name" href="#">${products[3].name}</a>
                                     </h3>
-                                    <span class="price">$3.10</span>
+                                    <span class="price">$${products[3].price}</span>
                                 </figcaption>
                             </div>
                         </div>
@@ -283,9 +296,9 @@
                                 </div>
                                 <figcaption class="desc">
                                     <h3>
-                                        <a class="product-name" href="#">Lemon</a>
+                                        <a class="product-name" href="#">${products[2].name}</a>
                                     </h3>
-                                    <span class="price">$1.10</span>
+                                    <span class="price">$${products[2].price}</span>
                                 </figcaption>
                             </div>
                         </div>
@@ -318,9 +331,9 @@
                                 </div>
                                 <figcaption class="desc">
                                     <h3>
-                                        <a class="product-name" href="#">Onion</a>
+                                        <a class="product-name" href="#">${products[4].name}</a>
                                     </h3>
-                                    <span class="price">$2.00 </span>
+                                    <span class="price">$${products[4].price} </span>
                                 </figcaption>
                             </div>
                         </div>
@@ -336,7 +349,7 @@
             <div class="row">
                 <p class="h3">Organic Food</p>
                 <h2>Healthy - Fresh - Delicious.</h2>
-                <a class="btn btn-brand pill" href="#">VIEW MORE </a>
+                <P CLASS="btn btn-brand pill">为你的生活增加一点绿色</P>
             </div>
         </div>
     </div>
