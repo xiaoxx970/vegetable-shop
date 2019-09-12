@@ -1,4 +1,12 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: ztc
+  Date: 2019/9/11
+  Time: 20:45
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Home</title>
@@ -14,12 +22,12 @@
 <div class="home-1" id="page">
     <nav id="menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop List</a></li>
-            <li><a href="shop-detail.html">Shop Detail</a><li>
-            <li><a href="wish-list.html">Wishlist</a></li>
-            <li><a href="shop-cart.html">Shop Cart</a></li>
-            <li><a href="check-out.html">Checkout</a></li>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="shop.html">商品列表</a></li>
+            <li><a href="shop-detail.html">商品详情</a><li>
+            <li><a href="wish-list.html">愿望清单</a></li>
+            <li><a href="shop-cart.html">购物车</a></li>
+            <li><a href="check-out.html">结算</a></li>
         </ul>
     </nav>
     <header class="header-style-1">
@@ -31,23 +39,18 @@
                     </a>
                     <nav>
                         <ul class="menu hidden-xs">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="shop.html">Shop List</a></li>
-                            <li><a href="shop-detail.html">Shop Detail</a><li>
-                            <li><a href="wish-list.html">Wishlist</a></li>
-                            <li><a href="shop-cart.html">Shop Cart</a></li>
-                            <li><a href="check-out.html">Checkout</a></li>
+                            <li><a href="index.html">主页</a></li>
+                            <li><a href="shop.html">商品列表</a></li>
+                            <li><a href="shop-detail.html">商品详情</a><li>
+                            <li><a href="wish-list.html">愿望清单</a></li>
+                            <li><a href="shop-cart.html">购物车</a></li>
+                            <li><a href="check-out.html">结算</a></li>
                         </ul>
                     </nav>
                     <aside class="right">
                         <div class="widget widget-control-header">
                             <div class="select-custom-wrapper">
-                                <select class="no-border">
-                                    <option>USD</option>
-                                    <option>VND</option>
-                                    <option>EUR</option>
-                                    <option>JPY</option>
-                                </select>
+
                             </div>
                         </div>
                         <div class="widget widget-control-header widget-search-header">
@@ -88,7 +91,7 @@
         <div class="rev_slider slider-home-1" id="slider_1">
             <ul>
                 <li>
-                    <img class="rev-slidebg" src="images/slider/1.jpg" alt="demo" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10">
+                    <img class="rev-slidebg" src="images/slider/1.jpg" alt="demo" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" >
                 </li>
             </ul>
         </div>
@@ -102,7 +105,7 @@
                             <a href="#">
                                 <figure class="product-category-item">
                                     <div class="thumbnail">
-                                        <img src="images/category-product/1.jpg" alt="" />
+                                        <img src="images/category-product/1.jpg" alt=""/>
                                     </div>
                                     <figcaption>
                                         <h3>Vegetable</h3>
@@ -148,10 +151,10 @@
                 <div class="row js-product-masonry-layout-1 product-masonry-layout-1">
                     <div class="grid-sizer"></div>
                     <figure class="item">
-                        <div class="product product-style-2">
-                            <div class="img-wrapper">
+                        <div class="product product-style-2" >
+                            <div class="img-wrapper" >
                                 <a href="#">
-                                    <img class="img-responsive" src="images/product/isotope-01.jpg" alt="product thumbnail" />
+                                    <img class="img-responsive" src="images/product/isotope-01.jpg" alt="product thumbnail"  h/>
                                 </a>
                                 <div class="product-control-wrapper bottom-right">
                                     <div class="wrapper-control-item">
@@ -406,106 +409,106 @@
         </div>
     </section>
 </div>
-<div class="call-to-action-style-2">
-    <div class="wrapper-carousel-background">
-        <img src="images/call-to-action/1-1.jpg" alt="" />
-        <img src="images/call-to-action/1-2.jpg" alt="" />
-        <img src="images/call-to-action/1-3.jpg" alt="" />
-        <img src="images/call-to-action/1-4.jpg" alt="" />
-    </div>
-    <div class="overlay-call-to-action"></div>
-    <a class="btn btn-brand pill icon-left" href="#">
-        <i class="fa fa-instagram"></i>FOWLLOW US</a>
-</div>
-<footer class="footer-style-1">
-    <div class="container">
-        <div class="row">
-            <div class="footer-style-1-inner">
-                <div class="widget-footer widget-text col-first col-small">
-                    <a href="#">
-                        <img class="logo-footer" src="images/logo.png" alt="Logo Organic" />
-                    </a>
-                    <div class="widget-link">
-                        <ul>
-                            <li>
-                                <span class="lnr lnr-map-marker icon"></span>
-                                <span>379 5th Ave New York, NYC 10018</span>
-                            </li>
-                            <li>
-                                <span class="lnr lnr-phone-handset icon"></span>
-                                <a href="tel:0123456789">(+1) 96 716 6879</a>
-                            </li>
-                            <li>
-                                <span class="lnr lnr-envelope icon"></span>
-                                <a href="mailto: contact@site.com">contact@site.com </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="widget-footer widget-link col-second col-medium">
-                    <div class="list-link">
-                        <h4 class="h4 heading">SHOP</h4>
-                        <ul>
-                            <li>
-                                <a href="#">Food</a>
-                            </li>
-                            <li>
-                                <a href="#">Farm</a>
-                            </li>
-                            <li>
-                                <a href="#">Health</a>
-                            </li>
-                            <li>
-                                <a href="#">Organic</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="list-link">
-                        <h4 class="h4 heading">SUPPORT</h4>
-                        <ul>
-                            <li>
-                                <a href="#">Contact Us</a>
-                            </li>
-                            <li>
-                                <a href="#">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="#">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="#">Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="list-link">
-                        <h4 class="h4 heading">MY ACCOUNT</h4>
-                        <ul>
-                            <li>
-                                <a href="#">Sign In</a>
-                            </li>
-                            <li>
-                                <a href="#">My Cart</a>
-                            </li>
-                            <li>
-                                <a href="#">My Wishlist</a>
-                            </li>
-                            <li>
-                                <a href="#">Check Out</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="widget-footer widget-newsletter-footer col-last col-small">
-                    <h4 class="h4 heading">NEWSLETTER</h4>
-                    <p>Subscribe now to get daily updates</p>
-                    <form class="organic-form form-inline btn-add-on circle border">
-                        <div class="form-group">
-                            <input class="form-control pill transparent" placeholder="Your Email..." type="email" />
-                            <button class="btn btn-brand circle" type="submit">
-                                <i class="fa fa-envelope-o"></i>
-                            </button>
-                        </div>
-                    </form>
+<%--<div class="call-to-action-style-2">--%>
+<%--    <div class="wrapper-carousel-background">--%>
+<%--        <img src="images/call-to-action/1-1.jpg" alt="" />--%>
+<%--        <img src="images/call-to-action/1-2.jpg" alt="" />--%>
+<%--        <img src="images/call-to-action/1-3.jpg" alt="" />--%>
+<%--        <img src="images/call-to-action/1-4.jpg" alt="" />--%>
+<%--    </div>--%>
+<%--    <div class="overlay-call-to-action"></div>--%>
+<%--    <a class="btn btn-brand pill icon-left" href="#">--%>
+<%--        <i class="fa fa-instagram"></i>FOWLLOW US</a>--%>
+<%--</div>--%>
+<%--<footer class="footer-style-1">--%>
+<%--    <div class="container">--%>
+<%--        <div class="row">--%>
+<%--            <div class="footer-style-1-inner">--%>
+<%--                <div class="widget-footer widget-text col-first col-small">--%>
+<%--                    <a href="#">--%>
+<%--                        <img class="logo-footer" src="images/logo.png" alt="Logo Organic" />--%>
+<%--                    </a>--%>
+<%--                    <div class="widget-link">--%>
+<%--                        <ul>--%>
+<%--                            <li>--%>
+<%--                                <span class="lnr lnr-map-marker icon"></span>--%>
+<%--                                <span>379 5th Ave New York, NYC 10018</span>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <span class="lnr lnr-phone-handset icon"></span>--%>
+<%--                                <a href="tel:0123456789">(+1) 96 716 6879</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <span class="lnr lnr-envelope icon"></span>--%>
+<%--                                <a href="mailto: contact@site.com">contact@site.com </a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <div class="widget-footer widget-link col-second col-medium">--%>
+<%--                    <div class="list-link">--%>
+<%--                        <h4 class="h4 heading">SHOP</h4>--%>
+<%--                        <ul>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Food</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Farm</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Health</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Organic</a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
+<%--                    </div>--%>
+<%--                    <div class="list-link">--%>
+<%--                        <h4 class="h4 heading">SUPPORT</h4>--%>
+<%--                        <ul>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Contact Us</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">FAQ</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Privacy Policy</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Blog</a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
+<%--                    </div>--%>
+<%--                    <div class="list-link">--%>
+<%--                        <h4 class="h4 heading">MY ACCOUNT</h4>--%>
+<%--                        <ul>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Sign In</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">My Cart</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">My Wishlist</a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">Check Out</a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <div class="widget-footer widget-newsletter-footer col-last col-small">--%>
+<%--                    <h4 class="h4 heading">NEWSLETTER</h4>--%>
+<%--                    <p>Subscribe now to get daily updates</p>--%>
+<%--                    <form class="organic-form form-inline btn-add-on circle border">--%>
+<%--                        <div class="form-group">--%>
+<%--                            <input class="form-control pill transparent" placeholder="Your Email..." type="email" />--%>
+<%--                            <button class="btn btn-brand circle" type="submit">--%>
+<%--                                <i class="fa fa-envelope-o"></i>--%>
+<%--                            </button>--%>
+<%--                        </div>--%>
+<%--                    </form>--%>
                 </div>
             </div>
         </div>
@@ -514,30 +517,30 @@
         <div class="container">
             <div class="row">
                 <div class="copy-right-inner">
-                    <p>Copyright © 2017 Designed by AuThemes. All rights reserved.</p>
+                    <p>蔬菜大多都是生长在土里的。也有的是在藤上挂着的。蔬菜在灿烂的阳光下,能长得更好。</p>
                     <div class="widget widget-footer widget-footer-creadit-card">
-                        <ul class="list-unstyle">
-                            <li>
-                                <a href="#">
-                                    <img src="images/icons/creadit-card-01.png" alt="creadit card" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="images/icons/creadit-card-02.png" alt="creadit card" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="images/icons/creadit-card-03.png" alt="creadit card" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="images/icons/creadit-card-04.png" alt="creadit card" />
-                                </a>
-                            </li>
-                        </ul>
+<%--                        <ul class="list-unstyle">--%>
+<%--                            <li>--%>
+<%--                                <a href="#">--%>
+<%--                                    <img src="images/icons/creadit-card-01.png" alt="creadit card" />--%>
+<%--                                </a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">--%>
+<%--                                    <img src="images/icons/creadit-card-02.png" alt="creadit card" />--%>
+<%--                                </a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">--%>
+<%--                                    <img src="images/icons/creadit-card-03.png" alt="creadit card" />--%>
+<%--                                </a>--%>
+<%--                            </li>--%>
+<%--                            <li>--%>
+<%--                                <a href="#">--%>
+<%--                                    <img src="images/icons/creadit-card-04.png" alt="creadit card" />--%>
+<%--                                </a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
                     </div>
                 </div>
             </div>
@@ -552,46 +555,46 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="woocommerce-product-gallery">
-                            <div class="main-carousel-product-quick-view">
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/01.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/02.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/03.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/04.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/05.jpg" alt="product thumbnail" />
-                                </div>
-                            </div>
-                            <div class="thumbnail-carousel-product-quickview">
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/01.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/02.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/03.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/04.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="images/product/05.jpg" alt="product thumbnail" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<%--            <div class="modal-body">--%>
+<%--                <div class="row">--%>
+<%--                    <div class="col-md-6">--%>
+<%--                        <div class="woocommerce-product-gallery">--%>
+<%--                            <div class="main-carousel-product-quick-view">--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/01.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/02.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/03.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/04.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/05.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="thumbnail-carousel-product-quickview">--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/01.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/02.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/03.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/04.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                                <div class="item">--%>
+<%--                                    <img class="img-responsive" src="images/product/05.jpg" alt="product thumbnail" />--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
                     <div class="col-md-6">
                         <div class="summary">
                             <div class="desc">
