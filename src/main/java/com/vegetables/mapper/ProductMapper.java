@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface ProductMapper {
-    @Select("select  *from products products")
+    @Select("select  *from products")
     public List<Products> SelectAllProduct();
 }

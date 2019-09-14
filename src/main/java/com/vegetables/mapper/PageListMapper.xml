@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegetables.mapper.PageListMapper">
+    <select id="queryCurrentData" parameterType="int" resultType="com.vegetables.pojo.Shop_List">
+        SELECT * FROM shop_list LIMIT #{arg0},#{arg1}
+    </select>
+</mapper>

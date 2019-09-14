@@ -35,8 +35,9 @@
     />
 
     <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
-        p:dataSource-ref="dataSource"/>
-<!--        p:mapperLocations="classpath:com/vegetables/mapper/*.xml"-->
+        p:dataSource-ref="dataSource" p:mapperLocations="classpath:com/vegetables/mapper/*.xml"
+    />
+
 
 
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer"

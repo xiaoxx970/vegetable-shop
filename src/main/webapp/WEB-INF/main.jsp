@@ -24,40 +24,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script>
-        window.onload=function(){
-            window.location.href="/selectProduct/selectAllProduct"
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+
 </head>
 <body class="animsition animsition">
 <div class="home-1" id="page">
     <nav id="menu">
         <ul>
-            <li><a href="index.html">主页</a></li>
-            <li><a href="shop.html">商品列表</a></li>
-            <li><a href="shop-detail.html">商品详情</a><li>
-            <li><a href="wish-list.html">愿望清单</a></li>
-            <li><a href="shop-cart.html">购物车</a></li>
-            <li><a href="check-out.html">结算</a></li>
+            <li><a href="../index.html">主页</a></li>
+            <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
+            <li><a href="../shop-detail.html">商品详情</a><li>
+            <li><a href="../wish-list.html">愿望清单</a></li>
+            <li><a href="../shop-cart.html">购物车</a></li>
+            <li><a href="../check-out.html">结算</a></li>
         </ul>
     </nav>
     <header class="header-style-1">
         <div class="container">
             <div class="row">
                 <div class="header-1-inner">
-                    <a class="brand-logo animsition-link" href="index.html">
-                        <img class="img-responsive" src="images/logo.png" alt="" />
+                    <a class="brand-logo animsition-link" href="../index.html">
+                        <img class="img-responsive" src="../images/logo.png" alt="" />
                     </a>
                     <nav>
                         <ul class="menu hidden-xs">
-                            <li><a href="index.html">主页</a></li>
-                            <li><a href="shop.html">商品列表</a></li>
-                            <li><a href="shop-detail.html">商品详情</a><li>
-                            <li><a href="wish-list.html">愿望清单</a></li>
-                            <li><a href="shop-cart.html">购物车</a></li>
-                            <li><a href="check-out.html">结算</a></li>
+                            <li><a href="../index.html">主页</a></li>
+                            <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
+                            <li><a href="../shop-detail.html">商品详情</a><li>
+                            <li><a href="../wish-list.html">愿望清单</a></li>
+                            <li><a href="../shop-cart.html">购物车</a></li>
+                            <li><a href="../check-out.html">结算</a></li>
                         </ul>
                     </nav>
                     <aside class="right">
@@ -83,7 +79,7 @@
                             </div>
                         </div>
                         <div class="widget widget-control-header widget-shop-cart js-widget-shop-cart">
-                            <a class="control" href="shop-cart.html">
+                            <a class="control" href="../shop-cart.html">
                                 <p class="counter">0</p>
                                 <span class="lnr lnr-cart"></span>
                             </a>
@@ -104,7 +100,7 @@
         <div class="rev_slider slider-home-1" id="slider_1">
             <ul>
                 <li>
-                    <img class="rev-slidebg" src="images/slider/1.jpg" alt="demo" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" >
+                    <img class="rev-slidebg" src="../images/slider/1.jpg" alt="demo" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" >
                 </li>
             </ul>
         </div>
@@ -118,7 +114,7 @@
                             <a href="#">
                                 <figure class="product-category-item">
                                     <div class="thumbnail">
-                                        <img src="images/category-product/1.jpg" alt=""/>
+                                        <img src="../images/category-product/1.jpg" alt=""/>
                                     </div>
                                     <figcaption>
                                         <h3>Vegetable</h3>
@@ -130,7 +126,7 @@
                             <a href="#">
                                 <figure class="product-category-item">
                                     <div class="thumbnail">
-                                        <img src="images/category-product/2.jpg" alt="" />
+                                        <img src="../images/category-product/2.jpg" alt="" />
                                     </div>
                                     <figcaption>
                                         <h3>Fruit</h3>
@@ -142,7 +138,7 @@
                             <a href="#">
                                 <figure class="product-category-item">
                                     <div class="thumbnail">
-                                        <img src="images/category-product/3.jpg" alt="" />
+                                        <img src="../images/category-product/3.jpg" alt="" />
                                     </div>
                                     <figcaption>
                                         <h3>Meat</h3>
@@ -167,7 +163,7 @@
                         <div class="product product-style-2" >
                             <div class="img-wrapper" >
                                 <a href="#">
-                                    <img class="img-responsive" src="images/product/isotope-01.jpg" alt="product thumbnail"  h/>
+                                    <img class="img-responsive" src="../images/product/isotope-01.jpg" alt="product thumbnail" h/>
                                 </a>
                                 <div class="product-control-wrapper bottom-right">
                                     <div class="wrapper-control-item">
@@ -202,7 +198,7 @@
                         <div class="product product-style-2">
                             <div class="img-wrapper">
                                 <a href="#">
-                                    <img class="img-responsive" src="images/product/isotope-03.jpg" alt="product thumbnail" />
+                                    <img class="img-responsive" src="../images/product/isotope-03.jpg" alt="product thumbnail" />
                                 </a>
                                 <div class="product-control-wrapper bottom-right">
                                     <div class="wrapper-control-item">
@@ -237,7 +233,7 @@
                         <div class="product product-style-2">
                             <div class="img-wrapper">
                                 <a href="#">
-                                    <img class="img-responsive" src="images/product/isotope-02.jpg" alt="product thumbnail" />
+                                    <img class="img-responsive" src="../images/product/isotope-02.jpg" alt="product thumbnail" />
                                 </a>
                                 <div class="product-control-wrapper bottom-right">
                                     <div class="wrapper-control-item">
@@ -272,7 +268,7 @@
                         <div class="product product-style-2">
                             <div class="img-wrapper">
                                 <a href="#">
-                                    <img class="img-responsive" src="images/product/isotope-04.jpg" alt="product thumbnail" />
+                                    <img class="img-responsive" src="../images/product/isotope-04.jpg" alt="product thumbnail" />
                                 </a>
                                 <div class="product-control-wrapper bottom-right">
                                     <div class="wrapper-control-item">
@@ -307,7 +303,7 @@
                         <div class="product product-style-2">
                             <div class="img-wrapper">
                                 <a href="#">
-                                    <img class="img-responsive" src="images/product/isotope-05.jpg" alt="product thumbnail" />
+                                    <img class="img-responsive" src="../images/product/isotope-05.jpg" alt="product thumbnail" />
                                 </a>
                                 <div class="product-control-wrapper bottom-right">
                                     <div class="wrapper-control-item">
@@ -343,7 +339,7 @@
         </div>
     </section>
     <div class="call-to-action-style-1">
-        <img class="rellax bg-overlay" src="images/call-to-action/1.jpg" alt="" />
+        <img class="rellax bg-overlay" src="../images/call-to-action/1.jpg" alt="" />
         <div class="overlay-call-to-action"></div>
         <div class="container">
             <div class="row">
@@ -364,7 +360,7 @@
                         <div class="post">
                             <div class="img-wrapper js-set-bg-blog-thumb">
                                 <a href="#">
-                                    <img src="images/blog/01.jpg" alt="Image" />
+                                    <img src="../images/blog/01.jpg" alt="Image" />
                                 </a>
                             </div>
                             <div class="desc">
@@ -383,7 +379,7 @@
                         <div class="post">
                             <div class="img-wrapper js-set-bg-blog-thumb">
                                 <a href="#">
-                                    <img src="images/blog/02.jpg" alt="Image" />
+                                    <img src="../images/blog/02.jpg" alt="Image" />
                                 </a>
                             </div>
                             <div class="desc">
@@ -402,7 +398,7 @@
                         <div class="post">
                             <div class="img-wrapper js-set-bg-blog-thumb">
                                 <a href="#">
-                                    <img src="images/blog/03.jpg" alt="Image" />
+                                    <img src="../images/blog/03.jpg" alt="Image" />
                                 </a>
                             </div>
                             <div class="desc">
@@ -688,49 +684,49 @@
         </div>
     </div>
 </div>
-<script src="js/library/jquery.min.js"></script>
-<script src="js/library/bootstrap.min.js"></script>
-<script src="js/function-check-viewport.js"></script>
-<script src="js/library/slick.min.js"></script>
-<script src="js/library/select2.full.min.js"></script>
-<script src="js/library/imagesloaded.pkgd.min.js"></script>
-<script src="js/library/jquery.mmenu.all.min.js"></script>
-<script src="js/library/rellax.min.js"></script>
-<script src="js/library/isotope.pkgd.min.js"></script>
-<script src="js/library/bootstrap-notify.min.js"></script>
-<script src="js/library/bootstrap-slider.js"></script>
-<script src="js/library/in-view.min.js"></script>
-<script src="js/library/countUp.js"></script>
-<script src="js/library/animsition.min.js"></script>
-<link rel="stylesheet" type="text/css" href="revolution/css/settings.css" />
-<link rel="stylesheet" type="text/css" href="revolution/css/layers.css" />
-<link rel="stylesheet" type="text/css" href="revolution/css/navigation.css" />
-<script src="revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="js/global.js"></script>
-<script src="js/config-banner-home-1.js">
+<script src="../js/library/jquery.min.js"></script>
+<script src="../js/library/bootstrap.min.js"></script>
+<script src="../js/function-check-viewport.js"></script>
+<script src="../js/library/slick.min.js"></script>
+<script src="../js/library/select2.full.min.js"></script>
+<script src="../js/library/imagesloaded.pkgd.min.js"></script>
+<script src="../js/library/jquery.mmenu.all.min.js"></script>
+<script src="../js/library/rellax.min.js"></script>
+<script src="../js/library/isotope.pkgd.min.js"></script>
+<script src="../js/library/bootstrap-notify.min.js"></script>
+<script src="../js/library/bootstrap-slider.js"></script>
+<script src="../js/library/in-view.min.js"></script>
+<script src="../js/library/countUp.js"></script>
+<script src="../js/library/animsition.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../revolution/css/settings.css" />
+<link rel="stylesheet" type="text/css" href="../revolution/css/layers.css" />
+<link rel="stylesheet" type="text/css" href="../revolution/css/navigation.css" />
+<script src="../revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="../revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="../revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="../js/global.js"></script>
+<script src="../js/config-banner-home-1.js">
 
 
 </script>
-<script src="js/config-mm-menu.js"></script>
-<script src="js/config-set-bg-blog-thumb.js"></script>
-<script src="js/config-isotope-product-home-1.js">
+<script src="../js/config-mm-menu.js"></script>
+<script src="../js/config-set-bg-blog-thumb.js"></script>
+<script src="../js/config-isotope-product-home-1.js">
 
 
 </script>
-<script src="js/config-carousel-thumbnail.js"></script>
-<script src="js/config-carousel-product-quickview.js"></script>
+<script src="../js/config-carousel-thumbnail.js"></script>
+<script src="../js/config-carousel-product-quickview.js"></script>
 <!-- Demo Only-->
-<script src="js/demo-add-to-cart.js">
+<script src="../js/demo-add-to-cart.js">
 
 
 </script>
