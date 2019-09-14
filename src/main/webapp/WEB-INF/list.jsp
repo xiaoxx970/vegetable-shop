@@ -172,16 +172,27 @@
                     <div class="col-md-12 text-right">
                         <nav>
                             <ul class="pagination pagination-style-1">
-                                <li>
-                                    <a class="prev page-numbers" href="#">
-                                        <i class="fa fa-angle-left"></i>
-                                    </a>
-                                </li>
+                                <c:choose>
+                                    <c:when test="${pagelist.currentPage == 1}">
+                                        <li class="disabled">
+                                            <a href="" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                     </c:when>
+                                    <c:otherwise>
+                                        <li>
+                                            <a href="${pageContext.request.contextPath }/selectList/seleAllShopList?currentPage=${pagelist.currentPage-1}" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    </c:otherwise>
+                                </c:choose>
                                 <c:forEach begin="1" end="${pagelist.totalPage}" var="count">
                                     <c:choose>
                                         <c:when test="${pagelist.currentPage eq count}">
-                                            <li>
-                                         <a id="011" class="page-numbers"  href="#">9</a>
+                                            <li class="active">
+                                         <a id="011" class="page-numbers"  href="#">${count}</a>
                                             </li>
                                         </c:when>
                                         <c:otherwise>
@@ -191,11 +202,23 @@
                                         </c:otherwise>
                                     </c:choose>
                                 </c:forEach>
-                                <li>
-                                    <a class="next page-numbers" href="#">
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </li>
+
+                                <c:choose>
+                                    <c:when test="${pagelist.totalPage eq pagelist.currentPage}">
+                                        <li class="disabled">
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li>
+                                            <a href="${pageContext.request.contextPath }/selectList/seleAllShopList?currentPage=${pagelist.currentPage+1}" aria-label="Previous">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </c:otherwise>
+                                </c:choose>
                             </ul>
                         </nav>
                     </div>
