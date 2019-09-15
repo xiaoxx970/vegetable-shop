@@ -19,14 +19,14 @@ public class ListController {
 
     @RequestMapping("/seleAllShopList")
     public String seleAllShopList(Model model,Integer currentPage){
-        int pageSize = 8;
+        int pageSize = 12;
         int index = (currentPage -1)*pageSize;
         List<Shop_List> shop_lists = pageListService.queryCurrentData(index, pageSize);
         int sum  = pageListService.queryTotalCount();
         int page = sum/pageSize;
         PageList pageList = new PageList();
         pageList.setData(shop_lists);
-        pageList.setPageSize(8);
+        pageList.setPageSize(pageSize);
         pageList.setTotalCount(sum);
         pageList.setTotalPage(page);
         pageList.setCurrentPage(currentPage);

@@ -31,7 +31,7 @@
 <div class="home-1" id="page">
     <nav id="menu">
         <ul>
-            <li><a href="../index.html">主页</a></li>
+            <li><a href="/selectProduct/selectAllProduct">主页</a></li>
             <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
             <li><a href="../shop-detail.html">商品详情</a><li>
             <li><a href="../wish-list.html">愿望清单</a></li>
@@ -48,7 +48,7 @@
                     </a>
                     <nav>
                         <ul class="menu hidden-xs">
-                            <li><a href="../index.html">主页</a></li>
+                            <li><a href="/selectProduct/selectAllProduct">主页</a></li>
                             <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
                             <li><a href="../shop-detail.html">商品详情</a><li>
                             <li><a href="../wish-list.html">愿望清单</a></li>

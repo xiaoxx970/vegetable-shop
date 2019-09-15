@@ -27,8 +27,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <style>
-        #011{
-            color: yellow;
+        .disabled{
+            pointer-events:none;
         }
     </style>
 </head>
@@ -37,7 +37,7 @@
     <!--      编写菜单-->
     <nav id="menu">
         <ul>
-            <li><a href="../index.html">主页</a></li>
+            <li><a href="/selectProduct/selectAllProduct">主页</a></li>
             <li><a href="/selectList/seleAllShopList">商品列表</a></li>
             <li><a href="../shop-detail.html">商品详情</a><li>
             <li><a href="../wish-list.html">愿望清单</a></li>
@@ -56,7 +56,7 @@
                     </a>
                     <nav>
                         <ul class="menu hidden-xs">
-                            <li><a href="../index.html">主页</a></li>
+                            <li><a href="/selectProduct/selectAllProduct">主页</a></li>
                             <li><a href="/selectList/seleAllShopList">商品列表</a></li>
                             <li><a href="../shop-detail.html">商品详情</a><li>
                             <li><a href="../wish-list.html">愿望清单</a></li>
@@ -161,7 +161,7 @@
                                 <h3>
                                     <a class="product-name" href="#">${page.name}</a>
                                 </h3>
-                                <span class="price">$${page.price}</span>
+                                <span class="price">￥${page.price}</span>
                             </figcaption>
                         </div>
                     </figure>

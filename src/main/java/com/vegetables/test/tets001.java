@@ -23,4 +23,7 @@ public class tets001 {
         List<Shop_List> shop_lists = pageListService.queryCurrentData(0, 5);
         System.out.println(shop_lists);
     }
+
+
+
 }
