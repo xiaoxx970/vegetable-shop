@@ -30,6 +30,9 @@
         .disabled{
             pointer-events:none;
         }
+        .cl{
+            color: #1d7d74;
+        }
     </style>
 </head>
 <body class="animsition">
@@ -250,6 +253,14 @@
     </div>
 </footer>
 
+
+
+
+
+
+
+
+
 <div class="modal fade" id="quick-view-product" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg modal-quickview woocommerce" role="document">
         <div class="modal-content">
@@ -260,44 +271,27 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-md-6">
+
+                    <div class="col-md-6" vertical-align="middle">
                         <div class="woocommerce-product-gallery">
-                            <div class="main-carousel-product-quick-view">
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/01.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/02.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/03.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/04.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/05.jpg" alt="product thumbnail" />
-                                </div>
+                            <div>
+                                <p>com.alibaba.druid.pool.DruidDataSource  2019-09-18 07:29:03 ERROR DruidDataSource : testWhileIdle is true, validationQuery not set  795
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                                </p>
+                                <p>
+                                    <br/>
+                                </p>
                             </div>
-                            <div class="thumbnail-carousel-product-quickview">
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/01.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/02.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/03.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/04.jpg" alt="product thumbnail" />
-                                </div>
-                                <div class="item">
-                                    <img class="img-responsive" src="../images/product/05.jpg" alt="product thumbnail" />
+                            <div class="main-carousel-product-quick-view">
+                                <div>
+                                    <img class="img-responsive" src="images/product/01.jpg" alt="product thumbnail" />
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                     <div class="col-md-6">
                         <div class="summary">
                             <div class="desc">
@@ -329,47 +323,21 @@
                             </div>
                             <div class="product-meta">
                                 <p class="posted-in">Categories:
-                                    <a href="#" rel="tag">Food</a>
+                                    <span class='cl'>Food</span>
                                 </p>
                                 <p class="tagged-as">Tags:
-                                    <a href="#" rel="tag">Natural</a>,
-                                    <a href="#" rel="tag">Organic</a>,
-                                    <a href="#" rel="tag">Health</a>,
-                                    <a href="#" rel="tag">Green</a>,
-                                    <a href="#" rel="tag">Vegetable</a>
+                                    <span class="cl">Natural</span>,
+                                    <span class="cl">Organic</span>,
+                                    <span class="cl">Health</span>,
+                                    <span class="cl">Green</span>,
+                                    <span class="cl">Vegetable</span>
                                 </p>
                                 <p class="id">ID:
-                                    <a href="#">A203</a>
+                                    <span  class='cl' >A203</span>
                                 </p>
                             </div>
                             <div class="widget-social align-left">
-                                <ul>
-                                    <li>
-                                        <a class="facebook" data-toggle="tooltip" title="Facebook" href="http://www.facebook.com/authemes">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="pinterest" data-toggle="tooltip" title="Pinterest" href="http://www.pinterest.com/authemes">
-                                            <i class="fa fa-pinterest"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="twitter" data-toggle="tooltip" title="Twitter" href="http://www.twitter.com/authemes">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="google-plus" data-toggle="tooltip" title="Google Plus" href="https://plus.google.com/authemes">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="instagram" data-toggle="tooltip" title="Instagram" href="https://instagram.com/authemes">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
