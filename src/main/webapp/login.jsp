@@ -42,7 +42,7 @@
                 </div>
                 <div style="color: red">${error}</div>
                 <div class="tm-flex-lr">
-                    <a href="#" class="white-text small">注册</a>
+                    <a href="/register.jsp" class="white-text small">注册</a>
                     <button type="submit" class="waves-effect btn btn-default  px-4 black-text rounded-0">Login</button>
                 </div>
                 <a href="#" class="white-text small">忘记密码？</a>

@@ -124,7 +124,7 @@
         </section>
     </div>
 
-    <section class="box-sm">
+    <section class="box-xs">
         <div class="container">
             <div class="row main">
                 <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row">

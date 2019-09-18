@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegetables.mapper.RegisterMapper">
+    <insert id="register">
+        insert  into user values (default ,#{arg0},#{arg1},#{arg2},#{arg3},#{arg4})
+    </insert>
+</mapper>
