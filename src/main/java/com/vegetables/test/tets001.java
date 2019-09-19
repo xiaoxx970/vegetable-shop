@@ -4,7 +4,6 @@ import com.vegetables.pojo.Products;
 import com.vegetables.pojo.Shop_List;
 import com.vegetables.service.PageListService;
 import com.vegetables.service.ProductsService;
-import com.vegetables.service.serviceImpl.PageListServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

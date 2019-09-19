@@ -6,6 +6,7 @@ public class Shop_List {
   private String name;
   private double price;
   private String src;
+  private String describe;
 
 
   public long getId() {
@@ -43,13 +44,23 @@ public class Shop_List {
     this.src = src;
   }
 
+
+  public String getDescribe() {
+    return describe;
+  }
+
+  public void setDescribe(String describe) {
+    this.describe = describe;
+  }
+
   @Override
   public String toString() {
-    return "ShopList{" +
+    return "Shop_List{" +
             "id=" + id +
             ", name='" + name + '\'' +
             ", price=" + price +
             ", src='" + src + '\'' +
+            ", describe='" + describe + '\'' +
             '}';
   }
 }

@@ -1,7 +1,6 @@
 package com.vegetables.test;
 
 import com.vegetables.pojo.User;
-import com.vegetables.service.PageListService;
 import com.vegetables.service.UserLoginService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

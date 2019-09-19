@@ -1,12 +1,12 @@
 package com.vegetables.pojo;
 public class User {
-
   private long userid;
   private String sex;
   private String username;
   private String password;
   private String phone;
   private String email;
+  private String adress;
 
 
   public long getUserid() {
@@ -62,6 +62,15 @@ public class User {
     this.email = email;
   }
 
+
+  public String getAdress() {
+    return adress;
+  }
+
+  public void setAdress(String adress) {
+    this.adress = adress;
+  }
+
   @Override
   public String toString() {
     return "User{" +
@@ -71,6 +80,7 @@ public class User {
             ", password='" + password + '\'' +
             ", phone='" + phone + '\'' +
             ", email='" + email + '\'' +
+            ", adress='" + adress + '\'' +
             '}';
   }
 }

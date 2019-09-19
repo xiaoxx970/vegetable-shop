@@ -120,6 +120,7 @@
         <div class="container">
           <div class="row main">
             <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row">
+
               <figure class="item">
                 <div class="product product-style-1">
                   <div class="img-wrapper">
@@ -155,6 +156,7 @@
                   </figcaption>
                 </div>
               </figure>
+
               <figure class="item">
                 <div class="product product-style-1">
                   <div class="img-wrapper">
@@ -163,9 +165,11 @@
                     </a>
                     <div class="product-control-wrapper bottom-right">
                       <div class="wrapper-control-item">
-                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
+
+                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product" onclick="a()">
                           <span class="lnr lnr-eye"></span>
                         </a>
+
                       </div>
                       <div class="wrapper-control-item item-wish-list">
                         <a class="js-wish-list js-notify-add-wish-list" href="#">
@@ -436,6 +440,8 @@
                   </figcaption>
                 </div>
               </figure>
+
+
               <figure class="item">
                 <div class="product product-style-1">
                   <div class="img-wrapper">
@@ -444,7 +450,7 @@
                     </a>
                     <div class="product-control-wrapper bottom-right">
                       <div class="wrapper-control-item">
-                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
+                        <a class="js-quick-view" href="javascript:a()" type="button" data-toggle="modal" data-target="#quick-view-product">
                           <span class="lnr lnr-eye"></span>
                         </a>
                       </div>
@@ -514,7 +520,7 @@
                     </a>
                     <div class="product-control-wrapper bottom-right">
                       <div class="wrapper-control-item">
-                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
+                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product" onclick="a()" >
                           <span class="lnr lnr-eye"></span>
                         </a>
                       </div>
@@ -809,6 +815,13 @@
         </div>
       </div>
     </div>
+    <a onclick="a()"> sssssssssssssssssssssssssssssssss</a>
+    <script>
+      function a() {
+
+          alert("aaaaa");
+      }
+    </script>
     <script src="js/library/jquery.min.js"></script>
     <script src="js/library/bootstrap.min.js"></script>
     <script src="js/function-check-viewport.js"></script>

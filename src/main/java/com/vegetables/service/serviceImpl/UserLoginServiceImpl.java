@@ -6,7 +6,6 @@ import com.vegetables.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 @Service
 public class UserLoginServiceImpl implements UserLoginService {
     @Autowired

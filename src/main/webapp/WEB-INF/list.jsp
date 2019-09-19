@@ -1,7 +1,7 @@
 <%--
   Created by IntelliJ IDEA.
   User: ztc
-  Date: 2019/9/14
+  Date: 2019/9/14e
   Time: 10:16
   To change this template use File | Settings | File Templates.
 --%>
@@ -141,7 +141,7 @@
                                 </a>
                                 <div class="product-control-wrapper bottom-right">
                                     <div class="wrapper-control-item">
-                                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
+                                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product" onclick="view('${page.name}','${page.price}','${page.src}','${page.describe}')">
                                             <span class="lnr lnr-eye"></span>
                                         </a>
                                     </div>
@@ -168,6 +168,7 @@
                             </figcaption>
                         </div>
                     </figure>
+
                     </c:forEach>
                 </div>
 
@@ -270,8 +271,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row">
 
+                <div class="row">
                     <div class="col-md-6" vertical-align="middle">
                         <div class="woocommerce-product-gallery">
                             <div>
@@ -285,24 +286,23 @@
                             </div>
                             <div class="main-carousel-product-quick-view">
                                 <div>
-                                    <img class="img-responsive" src="images/product/01.jpg" alt="product thumbnail" />
+                                    <img id="src" class="img-responsive" src="${pagelist.data[0].src}" alt="product thumbnail" />
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                     <div class="col-md-6">
                         <div class="summary">
                             <div class="desc">
                                 <div class="header-desc">
-                                    <h2 class="product-title">Sald</h2>
-                                    <p class="price">$2.00</p>
+                                    <h2 id="pname" class="product-title">${pagelist.data[0].name}</h2>
+                                    <p id="price" class="price">${pagelist.data[0].price}</p>
                                 </div>
                                 <div class="body-desc">
                                     <div class="woocommerce-product-details-short-description">
-                                        <p>Duis vestibulum ante velit. Pellentesque orci felis, pharetra ut pharetra ut, interdum at mauris. Aenean efficitur aliquet libero sit amet scelerisque. Suspendisse efficitur mollis eleifend. Aliquam tortor nibh, venenatis quis
-                                            sem dapibus, varius egestas lorem a sollicitudin. </p>
+                                        <p id="product_d">
+                                            ${pagelist.data[0].describe}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="footer-desc">
@@ -346,6 +346,16 @@
         </div>
     </div>
 </div>
+<script>
+    function view(name,price,src,describe) {
+        $("#product_d").html(describe);
+        $("#pname").html(name);
+        $("#price").html(price);
+        $("#src").attr('src',src);
+        alert(describe);
+    }
+</script>
+
 
 <script src="../js/library/jquery.min.js"></script>
 <script src="../js/library/bootstrap.min.js"></script>
