@@ -42,7 +42,7 @@
         <ul>
             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
             <li><a href="/selectList/seleAllShopList">商品列表</a></li>
-            <li><a href="../shop-detail.html">商品详情</a><li>
+
             <li><a href="../wish-list.html">愿望清单</a></li>
             <li><a href="../shop-cart.html">购物车</a></li>
             <li><a href="../check-out.html">结算</a></li>
@@ -61,7 +61,7 @@
                         <ul class="menu hidden-xs">
                             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
                             <li><a href="/selectList/seleAllShopList">商品列表</a></li>
-                            <li><a href="../shop-detail.html">商品详情</a><li>
+
                             <li><a href="../wish-list.html">愿望清单</a></li>
                             <li><a href="../shop-cart.html">购物车</a></li>
                             <li><a href="../check-out.html">结算</a></li>
@@ -352,7 +352,6 @@
         $("#pname").html(name);
         $("#price").html(price);
         $("#src").attr('src',src);
-        alert(describe);
     }
 </script>
 

@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8"  isELIgnored="false" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -25,7 +27,11 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
-
+    <style>
+        #times{
+            color: red;
+        }
+    </style>
 </head>
 <body class="animsition animsition">
 <div class="home-1" id="page">
@@ -33,7 +39,6 @@
         <ul>
             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
             <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
-            <li><a href="../shop-detail.html">商品详情</a><li>
             <li><a href="../wish-list.html">愿望清单</a></li>
             <li><a href="../shop-cart.html">购物车</a></li>
             <li><a href="../check-out.html">结算</a></li>
@@ -50,7 +55,6 @@
                         <ul class="menu hidden-xs">
                             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
                             <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
-                            <li><a href="../shop-detail.html">商品详情</a><li>
                             <li><a href="../wish-list.html">愿望清单</a></li>
                             <li><a href="../shop-cart.html">购物车</a></li>
                             <li><a href="../check-out.html">结算</a></li>
@@ -151,189 +155,97 @@
             </div>
         </div>
     </section>
+
+
     <section class="boxed-sm">
         <div class="container">
             <div class="heading-wrapper text-center">
-                <h3 class="heading">Our Products</h3>
+                <h3 class="heading danger" corlor="red" id="times"></h3>
             </div>
             <div class="row">
                 <div class="row js-product-masonry-layout-1 product-masonry-layout-1">
                     <div class="grid-sizer"></div>
-                    <figure class="item">
-                        <div class="product product-style-2" >
-                            <div class="img-wrapper" >
-                                <a href="#">
-                                    <img class="img-responsive" src="../images/product/isotope-01.jpg" alt="product thumbnail" h/>
-                                </a>
-                                <div class="product-control-wrapper bottom-right">
-                                    <div class="wrapper-control-item">
-                                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                            <span class="lnr lnr-eye"></span>
-                                        </a>
+
+
+                    <c:forEach items="${maim_product.data}" var="page" varStatus="status">
+                        <c:choose>
+                            <c:when test="${status.index == 0}">
+                                <figure class="item item-size-2">
+                                    <div class="product product-style-2">
+                                        <div class="img-wrapper">
+                                            <a href="#">
+                                                <img class="img-responsive" src="${page.src}" alt="product thumbnail" />
+                                            </a>
+                                            <div class="product-control-wrapper bottom-right">
+                                                <div class="wrapper-control-item">
+                                                    <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product" onclick="view('${page.name}','${page.price}','${page.src}','${page.describe}')">
+                                                        <span class="lnr lnr-eye"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="wrapper-control-item item-wish-list">
+                                                    <a class="js-wish-list js-notify-add-wish-list" href="#">
+                                                        <span class="lnr lnr-heart"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="wrapper-control-item item-add-cart js-action-add-cart">
+                                                    <a class="animate-icon-cart" href="#">
+                                                        <span class="lnr lnr-cart"></span>
+                                                    </a>
+                                                    <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
+                                                        <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <figcaption class="desc">
+                                                <h3>
+                                                    <a class="product-name" href="#">${page.name}</a>
+                                                </h3>
+                                                <span class="price">￥<del>${page.price}</del>&nbsp;&nbsp;&nbsp;&nbsp;<fmt:formatNumber type="number" value="${page.price*0.7} " maxFractionDigits="2" /></span>
+                                            </figcaption>
+                                        </div>
                                     </div>
-                                    <div class="wrapper-control-item item-wish-list">
-                                        <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                            <span class="lnr lnr-heart"></span>
+                                </figure>
+                            </c:when>
+
+                        <c:otherwise>
+                            <figure class="item">
+                                <div class="product product-style-2" >
+                                    <div class="img-wrapper" >
+                                        <a href="#">
+                                            <img class="img-responsive" src="${page.src}" alt="product thumbnail" h/>
                                         </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                        <a class="animate-icon-cart" href="#">
-                                            <span class="lnr lnr-cart"></span>
-                                        </a>
-                                        <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                            <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <figcaption class="desc">
-                                    <h3>
-                                        <a class="product-name" href="#">${products[0].name}</a>
-                                    </h3>
-                                    <span class="price">$${products[0].price}</span>
-                                </figcaption>
-                            </div>
-                        </div>
-                    </figure>
-                    <figure class="item item-size-2">
-                        <div class="product product-style-2">
-                            <div class="img-wrapper">
-                                <a href="#">
-                                    <img class="img-responsive" src="../images/product/isotope-03.jpg" alt="product thumbnail" />
-                                </a>
-                                <div class="product-control-wrapper bottom-right">
-                                    <div class="wrapper-control-item">
-                                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                            <span class="lnr lnr-eye"></span>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-wish-list">
-                                        <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                            <span class="lnr lnr-heart"></span>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                        <a class="animate-icon-cart" href="#">
-                                            <span class="lnr lnr-cart"></span>
-                                        </a>
-                                        <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                            <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <figcaption class="desc">
-                                    <h3>
-                                        <a class="product-name" href="#">${products[1].name}</a>
-                                    </h3>
-                                    <span class="price">$${products[1].price}</span>
-                                </figcaption>
-                            </div>
-                        </div>
-                    </figure>
-                    <figure class="item">
-                        <div class="product product-style-2">
-                            <div class="img-wrapper">
-                                <a href="#">
-                                    <img class="img-responsive" src="../images/product/isotope-02.jpg" alt="product thumbnail" />
-                                </a>
-                                <div class="product-control-wrapper bottom-right">
-                                    <div class="wrapper-control-item">
-                                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                            <span class="lnr lnr-eye"></span>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-wish-list">
-                                        <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                            <span class="lnr lnr-heart"></span>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                        <a class="animate-icon-cart" href="#">
-                                            <span class="lnr lnr-cart"></span>
-                                        </a>
-                                        <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                            <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                        </svg>
+                                        <div class="product-control-wrapper bottom-right">
+                                            <div class="wrapper-control-item">
+                                                <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product" onclick="view('${page.name}','${page.price}','${page.src}','${page.describe}')">
+                                                    <span class="lnr lnr-eye"></span>
+                                                </a>
+                                            </div>
+                                            <div class="wrapper-control-item item-wish-list">
+                                                <a class="js-wish-list js-notify-add-wish-list" href="#">
+                                                    <span class="lnr lnr-heart"></span>
+                                                </a>
+                                            </div>
+                                            <div class="wrapper-control-item item-add-cart js-action-add-cart">
+                                                <a class="animate-icon-cart" href="#">
+                                                    <span class="lnr lnr-cart"></span>
+                                                </a>
+                                                <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
+                                                    <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <figcaption class="desc">
+                                            <h3>
+                                                <a class="product-name" href="#">￥${page.name}</a>
+                                            </h3>
+                                            <span class="price"><del>￥${page.price}</del>&nbsp;&nbsp;&nbsp; <fmt:formatNumber type="number" value="${page.price*0.7} " maxFractionDigits="2" /> </span>
+                                        </figcaption>
                                     </div>
                                 </div>
-                                <figcaption class="desc">
-                                    <h3>
-                                        <a class="product-name" href="#">${products[3].name}</a>
-                                    </h3>
-                                    <span class="price">$${products[3].price}</span>
-                                </figcaption>
-                            </div>
-                        </div>
-                    </figure>
-                    <figure class="item">
-                        <div class="product product-style-2">
-                            <div class="img-wrapper">
-                                <a href="#">
-                                    <img class="img-responsive" src="../images/product/isotope-04.jpg" alt="product thumbnail" />
-                                </a>
-                                <div class="product-control-wrapper bottom-right">
-                                    <div class="wrapper-control-item">
-                                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                            <span class="lnr lnr-eye"></span>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-wish-list">
-                                        <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                            <span class="lnr lnr-heart"></span>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                        <a class="animate-icon-cart" href="#">
-                                            <span class="lnr lnr-cart"></span>
-                                        </a>
-                                        <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                            <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <figcaption class="desc">
-                                    <h3>
-                                        <a class="product-name" href="#">${products[2].name}</a>
-                                    </h3>
-                                    <span class="price">$${products[2].price}</span>
-                                </figcaption>
-                            </div>
-                        </div>
-                    </figure>
-                    <figure class="item">
-                        <div class="product product-style-2">
-                            <div class="img-wrapper">
-                                <a href="#">
-                                    <img class="img-responsive" src="../images/product/isotope-05.jpg" alt="product thumbnail" />
-                                </a>
-                                <div class="product-control-wrapper bottom-right">
-                                    <div class="wrapper-control-item">
-                                        <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                            <span class="lnr lnr-eye"></span>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-wish-list">
-                                        <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                            <span class="lnr lnr-heart"></span>
-                                        </a>
-                                    </div>
-                                    <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                        <a class="animate-icon-cart" href="#">
-                                            <span class="lnr lnr-cart"></span>
-                                        </a>
-                                        <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                            <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <figcaption class="desc">
-                                    <h3>
-                                        <a class="product-name" href="#">${products[4].name}</a>
-                                    </h3>
-                                    <span class="price">$${products[4].price} </span>
-                                </figcaption>
-                            </div>
-                        </div>
-                    </figure>
+                            </figure>
+                        </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -418,106 +330,6 @@
         </div>
     </section>
 </div>
-<%--<div class="call-to-action-style-2">--%>
-<%--    <div class="wrapper-carousel-background">--%>
-<%--        <img src="images/call-to-action/1-1.jpg" alt="" />--%>
-<%--        <img src="images/call-to-action/1-2.jpg" alt="" />--%>
-<%--        <img src="images/call-to-action/1-3.jpg" alt="" />--%>
-<%--        <img src="images/call-to-action/1-4.jpg" alt="" />--%>
-<%--    </div>--%>
-<%--    <div class="overlay-call-to-action"></div>--%>
-<%--    <a class="btn btn-brand pill icon-left" href="#">--%>
-<%--        <i class="fa fa-instagram"></i>FOWLLOW US</a>--%>
-<%--</div>--%>
-<%--<footer class="footer-style-1">--%>
-<%--    <div class="container">--%>
-<%--        <div class="row">--%>
-<%--            <div class="footer-style-1-inner">--%>
-<%--                <div class="widget-footer widget-text col-first col-small">--%>
-<%--                    <a href="#">--%>
-<%--                        <img class="logo-footer" src="images/logo.png" alt="Logo Organic" />--%>
-<%--                    </a>--%>
-<%--                    <div class="widget-link">--%>
-<%--                        <ul>--%>
-<%--                            <li>--%>
-<%--                                <span class="lnr lnr-map-marker icon"></span>--%>
-<%--                                <span>379 5th Ave New York, NYC 10018</span>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <span class="lnr lnr-phone-handset icon"></span>--%>
-<%--                                <a href="tel:0123456789">(+1) 96 716 6879</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <span class="lnr lnr-envelope icon"></span>--%>
-<%--                                <a href="mailto: contact@site.com">contact@site.com </a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="widget-footer widget-link col-second col-medium">--%>
-<%--                    <div class="list-link">--%>
-<%--                        <h4 class="h4 heading">SHOP</h4>--%>
-<%--                        <ul>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Food</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Farm</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Health</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Organic</a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-<%--                    <div class="list-link">--%>
-<%--                        <h4 class="h4 heading">SUPPORT</h4>--%>
-<%--                        <ul>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Contact Us</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">FAQ</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Privacy Policy</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Blog</a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-<%--                    <div class="list-link">--%>
-<%--                        <h4 class="h4 heading">MY ACCOUNT</h4>--%>
-<%--                        <ul>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Sign In</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">My Cart</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">My Wishlist</a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">Check Out</a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="widget-footer widget-newsletter-footer col-last col-small">--%>
-<%--                    <h4 class="h4 heading">NEWSLETTER</h4>--%>
-<%--                    <p>Subscribe now to get daily updates</p>--%>
-<%--                    <form class="organic-form form-inline btn-add-on circle border">--%>
-<%--                        <div class="form-group">--%>
-<%--                            <input class="form-control pill transparent" placeholder="Your Email..." type="email" />--%>
-<%--                            <button class="btn btn-brand circle" type="submit">--%>
-<%--                                <i class="fa fa-envelope-o"></i>--%>
-<%--                            </button>--%>
-<%--                        </div>--%>
-<%--                    </form>--%>
                 </div>
             </div>
         </div>
@@ -528,34 +340,15 @@
                 <div class="copy-right-inner">
                     <p>蔬菜大多都是生长在土里的。也有的是在藤上挂着的。蔬菜在灿烂的阳光下,能长得更好。</p>
                     <div class="widget widget-footer widget-footer-creadit-card">
-<%--                        <ul class="list-unstyle">--%>
-<%--                            <li>--%>
-<%--                                <a href="#">--%>
-<%--                                    <img src="images/icons/creadit-card-01.png" alt="creadit card" />--%>
-<%--                                </a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">--%>
-<%--                                    <img src="images/icons/creadit-card-02.png" alt="creadit card" />--%>
-<%--                                </a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">--%>
-<%--                                    <img src="images/icons/creadit-card-03.png" alt="creadit card" />--%>
-<%--                                </a>--%>
-<%--                            </li>--%>
-<%--                            <li>--%>
-<%--                                <a href="#">--%>
-<%--                                    <img src="images/icons/creadit-card-04.png" alt="creadit card" />--%>
-<%--                                </a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
+
 <div class="modal fade" id="quick-view-product" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg modal-quickview woocommerce" role="document">
         <div class="modal-content">
@@ -564,57 +357,39 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-<%--            <div class="modal-body">--%>
-<%--                <div class="row">--%>
-<%--                    <div class="col-md-6">--%>
-<%--                        <div class="woocommerce-product-gallery">--%>
-<%--                            <div class="main-carousel-product-quick-view">--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/01.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/02.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/03.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/04.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/05.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                            <div class="thumbnail-carousel-product-quickview">--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/01.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/02.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/03.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/04.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                                <div class="item">--%>
-<%--                                    <img class="img-responsive" src="images/product/05.jpg" alt="product thumbnail" />--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-6" vertical-align="middle">
+                        <div class="woocommerce-product-gallery">
+                            <div>
+                                <p>com.alibaba.druid.pool.DruidDataSource  2019-09-18 07:29:03 ERROR DruidDataSource : testWhileIdle is true, validationQuery not set  795
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                                </p>
+                                <p>
+                                    <br/>
+                                </p>
+                            </div>
+                            <div class="main-carousel-product-quick-view">
+                                <div>
+                                    <img id="src" class="img-responsive" src="${pagelist.data[0].src}" alt="product thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="summary">
                             <div class="desc">
                                 <div class="header-desc">
-                                    <h2 class="product-title">Sald</h2>
-                                    <p class="price">$2.00</p>
+                                    <h2 id="pname" class="product-title">${pagelist.data[0].name}</h2>
+                                    <p id="price" class="price">${pagelist.data[0].price}</p>
                                 </div>
                                 <div class="body-desc">
                                     <div class="woocommerce-product-details-short-description">
-                                        <p>Duis vestibulum ante velit. Pellentesque orci felis, pharetra ut pharetra ut, interdum at mauris. Aenean efficitur aliquet libero sit amet scelerisque. Suspendisse efficitur mollis eleifend. Aliquam tortor nibh, venenatis quis
-                                            sem dapibus, varius egestas lorem a sollicitudin. </p>
+                                        <p id="product_d">
+                                            ${pagelist.data[0].describe}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="footer-desc">
@@ -635,47 +410,21 @@
                             </div>
                             <div class="product-meta">
                                 <p class="posted-in">Categories:
-                                    <a href="#" rel="tag">Food</a>
+                                    <span class='cl'>Food</span>
                                 </p>
                                 <p class="tagged-as">Tags:
-                                    <a href="#" rel="tag">Natural</a>,
-                                    <a href="#" rel="tag">Organic</a>,
-                                    <a href="#" rel="tag">Health</a>,
-                                    <a href="#" rel="tag">Green</a>,
-                                    <a href="#" rel="tag">Vegetable</a>
+                                    <span class="cl">Natural</span>,
+                                    <span class="cl">Organic</span>,
+                                    <span class="cl">Health</span>,
+                                    <span class="cl">Green</span>,
+                                    <span class="cl">Vegetable</span>
                                 </p>
                                 <p class="id">ID:
-                                    <a href="#">A203</a>
+                                    <span  class='cl' >A203</span>
                                 </p>
                             </div>
                             <div class="widget-social align-left">
-                                <ul>
-                                    <li>
-                                        <a class="facebook" data-toggle="tooltip" title="Facebook" href="http://www.facebook.com/authemes">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="pinterest" data-toggle="tooltip" title="Pinterest" href="http://www.pinterest.com/authemes">
-                                            <i class="fa fa-pinterest"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="twitter" data-toggle="tooltip" title="Twitter" href="http://www.twitter.com/authemes">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="google-plus" data-toggle="tooltip" title="Google Plus" href="https://plus.google.com/authemes">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="instagram" data-toggle="tooltip" title="Instagram" href="https://instagram.com/authemes">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
+
                             </div>
                         </div>
                     </div>
@@ -684,6 +433,35 @@
         </div>
     </div>
 </div>
+<script>
+    function view(name,price,src,describe) {
+        $("#product_d").html(describe);
+        $("#pname").html(name);
+        $("#price").html(price);
+        $("#src").attr('src',src);
+
+    }
+</script>
+<script type="text/javascript">
+    function _fresh() {
+        var endtime = new Date("2019/9/20,12:20:12");
+        var nowtime = new Date();
+        var leftsecond = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
+        if (leftsecond < 0) { leftsecond = 0; }
+        __d = parseInt(leftsecond / 3600 / 24);
+        __h = parseInt((leftsecond / 3600) % 24);
+        __m = parseInt((leftsecond / 60) % 60);
+        __s = parseInt(leftsecond % 60);
+        document.getElementById("times").innerHTML ="限时7折: " +__d + "天 " + __h + "小时" + __m + "分" + __s + "秒 :";
+        if (leftsecond <= 0) {
+            document.getElementById("times").innerHTML = "抢购已结束";
+            clearInterval(sh);
+        }
+    }
+    _fresh()
+    var sh;
+    setInterval(_fresh, 10);
+</script>
 <script src="../js/library/jquery.min.js"></script>
 <script src="../js/library/bootstrap.min.js"></script>
 <script src="../js/function-check-viewport.js"></script>

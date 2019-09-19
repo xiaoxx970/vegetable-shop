@@ -16,7 +16,6 @@ import java.util.List;
 public class ListController {
     @Autowired
     private PageListService pageListService;
-
     @RequestMapping("/seleAllShopList")
     public String seleAllShopList(Model model,Integer currentPage){
         int pageSize = 8;
@@ -34,6 +33,4 @@ public class ListController {
         model.addAttribute("pagelist",pageList);
         return "list";
     }
-
-
 }
