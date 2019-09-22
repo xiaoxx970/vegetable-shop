@@ -20,7 +20,7 @@ public class UserLoginController {
         User user = userLoginService.selectUser(username, password);
         if(user != null){
             HttpSession session = request.getSession();
-            session.setAttribute("status","yes");
+            session.setAttribute("user",user);
             model.addAttribute("user",user);
             return "redirect:/selectProduct/selectAllProduct";
         }else {

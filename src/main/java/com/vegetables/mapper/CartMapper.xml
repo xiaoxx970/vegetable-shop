@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegetables.mapper.CartMapper">
+    <insert id="insertCart" parameterType="com.vegetables.pojo.Cart">
+     insert  into cart values (default ,#{parentId},#{pName},#{pPrice},#{quantity},#{pTotal},#{pSrc})
+    </insert>
+
+    <update id="changeCart" parameterType="int">
+    update cart set quantity = quantity+1 where cart_id = #{arg0}
+    </update>
+
+    <delete id="delCart" parameterType="int">
+        delete from cart where cart_id =#{arg0}
+    </delete>
+
+    <select id="findAllCart" parameterType="int" resultType="com.vegetables.pojo.Cart">
+        select  cart_id cartId, p_name pName, p_price pPrice,quantity,p_total pTotal,p_src pSrc from cart where parent_id =#{arg0}
+    </select>
+</mapper>

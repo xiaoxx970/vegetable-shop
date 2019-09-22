@@ -1957,7 +1957,12 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
-
+.CCC{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 .container:before, .container:after {
   content: " ";
   display: table;
@@ -21148,23 +21153,23 @@ header .widget-control-header .dropdown-menu {
 
 /* Product Grid Equal Height Wrapper - Shop Grid 1 */
 .product-grid-equal-height-wrapper.product-equal-height-4-columns .item {
-  width: 25%;
-  padding: 0 15px;
+  width: 20%;
+  padding: 0 10px;
   margin-bottom: 60px;
 }
 
 @media (max-width: 767px) {
   .product-grid-equal-height-wrapper.product-equal-height-4-columns {
-    padding: 15px;
+    padding: 10px;
   }
   .product-grid-equal-height-wrapper.product-equal-height-4-columns .item {
-    width: 50%;
+    width: 40%;
   }
 }
 
 @media (max-width: 480px) {
   .product-grid-equal-height-wrapper.product-equal-height-4-columns .item {
-    width: 100%;
+    width: 80%;
   }
 }
 

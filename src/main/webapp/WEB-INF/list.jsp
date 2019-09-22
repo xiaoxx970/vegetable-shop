@@ -41,8 +41,7 @@
     <nav id="menu">
         <ul>
             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
-            <li><a href="/selectList/seleAllShopList">商品列表</a></li>
-
+            <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
             <li><a href="../wish-list.html">愿望清单</a></li>
             <li><a href="../shop-cart.html">购物车</a></li>
             <li><a href="../check-out.html">结算</a></li>
@@ -51,7 +50,7 @@
 
     <!--      当窗口缩小到一定比例得时候 隐藏菜单-->
     <header class="header-style-1 static">
-        <div class="container">
+        <div class="CCC">
             <div class="row">
                 <div class="header-1-inner">
                     <a class="brand-logo animsition-link" href="../index.html">
@@ -60,8 +59,7 @@
                     <nav>
                         <ul class="menu hidden-xs">
                             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
-                            <li><a href="/selectList/seleAllShopList">商品列表</a></li>
-
+                            <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
                             <li><a href="../wish-list.html">愿望清单</a></li>
                             <li><a href="../shop-cart.html">购物车</a></li>
                             <li><a href="../check-out.html">结算</a></li>
@@ -114,7 +112,7 @@
     </section>
 
     <div class="woocommerce-top-control wrapper">
-        <section class="boxed-sm">
+        <section class="boxed-xs">
             <div class="container">
                 <div class="row">
                     <div class="woocommerce-top-control">
@@ -126,19 +124,15 @@
             </div>
         </section>
     </div>
-
-    <section class="box-xs">
-        <div class="container">
+    <section class="boxed-sm">
+        <div class="CCC">
             <div class="row main">
                 <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row">
-
                     <c:forEach items="${pagelist.data}" var="page">
                     <figure class="item">
                         <div class="product product-style-1">
                             <div class="img-wrapper">
-                                <a href="#">
                                     <img class="img-responsive" src=${page.src} alt="productthumbnail" />
-                                </a>
                                 <div class="product-control-wrapper bottom-right">
                                     <div class="wrapper-control-item">
                                         <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product" onclick="view('${page.name}','${page.price}','${page.src}','${page.describe}')">
@@ -173,7 +167,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12 text-right">
+                    <div class="col-sm-4 text-right">
                         <nav>
                             <ul class="pagination pagination-style-1">
                                 <c:choose>
@@ -273,7 +267,7 @@
             <div class="modal-body">
 
                 <div class="row">
-                    <div class="col-md-6" vertical-align="middle">
+                    <div class="col-sm-4" vertical-align="middle">
                         <div class="woocommerce-product-gallery">
                             <div>
                                 <p>com.alibaba.druid.pool.DruidDataSource  2019-09-18 07:29:03 ERROR DruidDataSource : testWhileIdle is true, validationQuery not set  795
@@ -291,7 +285,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-4">
                         <div class="summary">
                             <div class="desc">
                                 <div class="header-desc">

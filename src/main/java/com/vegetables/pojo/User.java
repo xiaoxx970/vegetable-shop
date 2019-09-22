@@ -1,6 +1,6 @@
 package com.vegetables.pojo;
 public class User {
-  private long userid;
+  private int  userid;
   private String sex;
   private String username;
   private String password;
@@ -9,11 +9,11 @@ public class User {
   private String adress;
 
 
-  public long getUserid() {
+  public int getUserid() {
     return userid;
   }
 
-  public void setUserid(long userid) {
+  public void setUserid(int  userid) {
     this.userid = userid;
   }
 

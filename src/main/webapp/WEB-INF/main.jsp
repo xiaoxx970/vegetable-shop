@@ -165,17 +165,13 @@
             <div class="row">
                 <div class="row js-product-masonry-layout-1 product-masonry-layout-1">
                     <div class="grid-sizer"></div>
-
-
                     <c:forEach items="${maim_product.data}" var="page" varStatus="status">
                         <c:choose>
                             <c:when test="${status.index == 0}">
                                 <figure class="item item-size-2">
                                     <div class="product product-style-2">
                                         <div class="img-wrapper">
-                                            <a href="#">
                                                 <img class="img-responsive" src="${page.src}" alt="product thumbnail" />
-                                            </a>
                                             <div class="product-control-wrapper bottom-right">
                                                 <div class="wrapper-control-item">
                                                     <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product" onclick="view('${page.name}','${page.price}','${page.src}','${page.describe}')">
@@ -211,9 +207,8 @@
                             <figure class="item">
                                 <div class="product product-style-2" >
                                     <div class="img-wrapper" >
-                                        <a href="#">
                                             <img class="img-responsive" src="${page.src}" alt="product thumbnail" h/>
-                                        </a>
+
                                         <div class="product-control-wrapper bottom-right">
                                             <div class="wrapper-control-item">
                                                 <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product" onclick="view('${page.name}','${page.price}','${page.src}','${page.describe}')">
@@ -309,9 +304,7 @@
                     <div class="col-md-4">
                         <div class="post">
                             <div class="img-wrapper js-set-bg-blog-thumb">
-                                <a href="#">
                                     <img src="../images/blog/03.jpg" alt="Image" />
-                                </a>
                             </div>
                             <div class="desc">
                                 <h4>
@@ -444,7 +437,7 @@
 </script>
 <script type="text/javascript">
     function _fresh() {
-        var endtime = new Date("2019/9/20,12:20:12");
+        var endtime = new Date("2019/9/25,12:20:12");
         var nowtime = new Date();
         var leftsecond = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
         if (leftsecond < 0) { leftsecond = 0; }

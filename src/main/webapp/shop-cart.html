@@ -9,6 +9,11 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <style>
+    #000{
+      float: right;
+    }
+  </style>
 </head>
 <body class="animsition">
 <div class="shop-cart" id="page">
@@ -16,10 +21,10 @@
     <ul>
       <li><a href="/selectProduct/selectAllProduct">主页</a></li>
       <li><a href="/selectList/seleAllShopList">商品列表</a></li>
-      <li><a href="../shop-detail.html">商品详情</a><li>
-      <li><a href="../wish-list.html">愿望清单</a></li>
-      <li><a href="../shop-cart.html">购物车</a></li>
-      <li><a href="../check-out.html">结算</a></li>
+
+      <li><a href="/wish-list.html">愿望清单</a></li>
+      <li><a href="/shop-cart.html">购物车</a></li>
+      <li><a href="/check-out.html">结算</a></li>
     </ul>
   </nav>
   <header class="header-style-1 static">
@@ -33,10 +38,10 @@
             <ul class="menu hidden-xs">
               <li><a href="/selectProduct/selectAllProduct">主页</a></li>
               <li><a href="/selectList/seleAllShopList">商品列表</a></li>
-              <li><a href="../shop-detail.html">商品详情</a><li>
-              <li><a href="../wish-list.html">愿望清单</a></li>
-              <li><a href="../shop-cart.html">购物车</a></li>
-              <li><a href="../check-out.html">结算</a></li>
+
+              <li><a href="/wish-list.html">愿望清单</a></li>
+              <li><a href="/shop-cart.html">购物车</a></li>
+              <li><a href="/check-out.html">结算</a></li>
             </ul>
           </nav>
           <aside class="right">
@@ -101,6 +106,7 @@
             </tr>
             </thead>
             <tbody>
+
             <tr>
               <td class="product-thumbnail">
                 <img src="images/product/thumb-cart-01.jpg" alt="product-thumbnail">
@@ -118,36 +124,17 @@
                 <a class="remove" href="#" aria-label="Remove this item">×</a>
               </td>
             </tr>
-            <tr>
-              <td class="product-thumbnail">
-                <img src="images/product/thumb-cart-02.jpg" alt="product-thumbnail">
-              </td>
-              <td class="product-name" data-title="Product">
-                <a class="product-name" href="#">Apple</a>
-              </td>
-              <td class="product-weight" data-title="Weight">0.4 kg</td>
-              <td class="product-quantity" data-title="Quantity">
-                <input class="qty" step="1" min="0" max="" name="product-name" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
-              </td>
-              <td class="product-price" data-title="Price">$2.26</td>
-              <td class="product-subtotal" data-title="Total">$2.26</td>
-              <td class="product-remove">
-                <a class="remove" href="#" aria-label="Remove this item">×</a>
-              </td>
-            </tr>
+
             </tbody>
             <tfoot>
             <tr>
               <td colspan="7">
                 <div class="form-coupon organic-form">
-                  <div class="form-group">
-                    <input class="form-control pill" placeholder="Coupon Code">
-                  </div>
-                  <div class="form-group">
-                    <a class="btn btn-brand pill" href="#">APPLY COUPON</a>
-                  </div>
                   <div class="form-group update-cart">
                     <a class="btn btn-brand-ghost pill">UPDATE CART</a>
+                  </div>
+                  <div class="form-group update-cart">
+                    <b>ni de  total is :</b>
                   </div>
                 </div>
               </td>
@@ -155,90 +142,6 @@
             </tfoot>
           </table>
         </form>
-        <section class="boxed-sm">
-          <div class="container">
-            <div class="woocommerce">
-
-              <div class="woocommerce-checkout-review-order">
-                <h4>Your order</h4>
-                <table class="woocommerce-checkout-review-order-table">
-                  <thead>
-                  <tr>
-                    <th class="product-name">Product</th>
-                    <th class="product-total">Total</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr class="cart_item">
-                    <td class="product-name">Salad
-                      <span class="product-quantity">× 1</span>
-                    </td>
-                    <td class="product-total">
-                                  <span class="woocommerce-checkout-review-order-table">
-                                    <span class="woocommerce-checkout-review-order-table">$</span>2.26</span>
-                    </td>
-                  </tr>
-                  <tr class="cart_item">
-                    <td class="product-name">Apple
-                      <span class="product-quantity">× 1</span>
-                    </td>
-                    <td class="product-total">
-                                  <span class="woocommerce-checkout-review-order-table">
-                                    <span class="woocommerce-checkout-review-order-table">$</span>4.05</span>
-                    </td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
-                  <tr class="order-total">
-                    <th>Total</th>
-                    <td>
-                      <strong>
-                                    <span class="woocommerce-checkout-review-order-table">
-                                      <span class="woocommerce-checkout-review-order-table">$</span>6.31</span>
-                      </strong>
-                    </td>
-                  </tr>
-                  </tfoot>
-                </table>
-              </div>
-              <div class="woocommerce-checkout-payment">
-                <div class="payment_method_cheque">
-                  <div class="radio">
-                    <label>
-                      <input class="input-radio" id="payment_method_cheque" name="payment_method" value="cheque" checked="checked" type="radio">Check Payments
-                      <div class="payment_box payment_method_cheque">
-                        <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-                <div class="payment_method_paypal">
-                  <div class="radio">
-                    <label>
-                      <input class="input-radio" id="payment_method_paypal" name="payment_method" value="paypal" type="radio"> PayPal
-                      <img src="images/icons/paypal-group-icon.png" alt="paypal">
-                      <a href="#">What is Paypal? </a>
-                      <div class="payment_box payment_method_cheque">
-                        <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-                <div class="form-place-order">
-                  <noscript>Since your browser does not support JavaScript, or it is disabled, please ensure you click the
-                    <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.
-                    <br>
-                    <input class="button alt" type="submit" name="woocommerce_checkout_update_totals" value="Update totals">
-                  </noscript>
-                  <input class="place_order btn btn-brand pill" name="woocommerce_checkout_place_order" value="PLACE ORDER" data-value="Place order" type="submit">
-                </div>
-              </div>
-              </form>
-            </div>
-          </div>
-
-
-        </section>
       </div>
     </div>
   </section>
