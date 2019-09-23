@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegetables.mapper.WishMapper">
+    <insert id="insertWish" parameterType="com.vegetables.pojo.Wish">
+     insert  into wish values (default ,#{parentId},#{wName},#{wPrice},#{src})
+    </insert>
+    <delete id="delWish" parameterType="int">
+        delete from wish where wish_id =#{arg0}
+    </delete>
+    <select id="findAllWish" parameterType="int" resultType="com.vegetables.pojo.Wish">
+        select  Wish_id wishId, w_name wName, w_price wPrice,src from wish where parent_id =#{arg0}
+    </select>
+    <select id="findAllWishName" resultType="Integer" >
+        select IFNULL(Wish_id,0) from wish where w_name = #{arg0} and parent_id= #{arg1}
+    </select>
+</mapper>

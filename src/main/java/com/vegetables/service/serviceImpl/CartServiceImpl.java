@@ -33,7 +33,6 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Integer  findAllCartName(String name , int parentId) {
-        boolean flag = false;
         Integer i = cartMapper.findAllCartName(name, parentId);
         return i;
     }

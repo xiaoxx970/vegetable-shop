@@ -1,5 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" language="java" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: ztc
+  Date: 2019/9/23
+  Time: 14:25
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html; charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -20,15 +28,14 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body class="animsition">
-<div class="shop-cart" id="page">
+<div class="wish-list" id="page">
     <nav id="menu">
         <ul>
             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
             <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
-            <li><a href="../shop-detail.html">商品详情</a><li>
-            <li><a href="../wish-list.html">愿望清单</a></li>
+            <li><a href="/wish-list.html">愿望清单</a></li>
             <li><a href="/cart/findAllCart">购物车</a></li>
-            <li><a href="../check-out.html">结算</a></li>
+            <li><a href="/check-out.html">结算</a></li>
         </ul>
     </nav>
     <header class="header-style-1 static">
@@ -42,16 +49,14 @@
                         <ul class="menu hidden-xs">
                             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
                             <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
-                            <li><a href="../shop-detail.html">商品详情</a><li>
-                            <li><a href="../wish-list.html">愿望清单</a></li>
+                            <li><a href="/wish-list.html">愿望清单</a></li>
                             <li><a href="/cart/findAllCart">购物车</a></li>
-                            <li><a href="../check-out.html">结算</a></li>
+                            <li><a href="/check-out.html">结算</a></li>
                         </ul>
                     </nav>
                     <aside class="right">
                         <div class="widget widget-control-header">
-                            <div >
-                                <span class="team-wrapper">你好：</span>
+                            <div class="select-custom-wrapper">
                             </div>
                         </div>
                         <div class="widget widget-control-header widget-search-header">
@@ -89,9 +94,9 @@
         </div>
     </header>
     <section class="sub-header shop-detail-1">
-        <img class="rellax bg-overlay" src="images/sub-header/013.jpg" alt="">
+        <img class="rellax bg-overlay" src="images/sub-header/014.jpg" alt="">
         <div class="overlay-call-to-action"></div>
-        <h3 class="heading-style-3">Shop Cart</h3>
+        <h3 class="heading-style-3">Wishlist</h3>
     </section>
     <section class="boxed-sm">
         <div class="container">
@@ -102,68 +107,52 @@
                         <tr>
                             <th class="product-thumbnail">Product</th>
                             <th class="product-name"></th>
-                            <th class="product-weight">Weight</th>
-                            <th class="product-quantity">Quantity</th>
                             <th class="product-price">Price</th>
-                            <th class="product-subtotal">Total</th>
+                            <th class="product-status">Stock Status</th>
+                            <th class="product-add-to-cart"> </th>
                             <th class="product-remove"></th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <c:forEach items="${cart}" var="car" varStatus="count">
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <img src="${car.PSrc}" alt="product-thumbnail" width="75" height="75">
-                                </td>
-                                <td class="product-name" data-title="Product">
-                                    <a class="product-name" href="#">${car.PName}</a>
-                                </td>
-                                <td class="product-weight" data-title="Weight">0.4 kg</td>
-                                <td class="product-quantity" data-title="Quantity">
-                                    <input class="qty" step="1" min="0" max="" name="product-name" value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
-                                </td>
-                                <td class="product-price" data-title="Price">$${car.PPrice}</td>
-                                <td class="product-subtotal" data-title="Total">$${car.PTotal}</td>
-                                <td class="product-remove">
-                                    <a class="remove" aria-label="Remove this item" href="javascript:;" onclick=" delCart('${car.cartId}',deleteCurrentRow(this))" >×</a>                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                        <tfoot>
+                        <c:forEach items="${allWish}"  var="wish" >
                         <tr>
-                            <td colspan="7">
-                                <div class="form-coupon organic-form">
-                                    <div class="form-group update-cart">
-                                        <a class="btn btn-brand-ghost pill"> COMMIT </a>
-                                    </div>
-                                    <div class="form-group update-cart">
-                                        <b>ni de  total is :</b>
-                                    </div>
-                                </div>
+                            <td class="product-thumbnail">
+                                <img src="${wish.src}" alt="product-thumbnail">
+                            </td>
+                            <td class="product-name" data-title="Product">
+                                <a class="product-name" href="#">${wish.WName}</a>
+                            </td>
+                            <td class="product-price" data-title="Weight">${wish.WPrice}</td>
+                            <td class="product-stock-status" data-title="Stock Status">
+                                <a href="#">In Stock</a>
+                            </td>
+                            <td class="product-add-to-cart">
+                                <a class="btn btn-brand" href="cart.html">ADD TO CART</a>
+                            </td>
+                            <td class="product-remove text-right">
+                                <a class="remove" href="#" aria-label="Remove this item">x</a>
                             </td>
                         </tr>
-                        </tfoot>
+                        </c:forEach>
+                        </tbody>
                     </table>
                 </form>
             </div>
         </div>
     </section>
 </div>
+
 <footer class="footer-style-1">
     <div class="container">
         <div class="row">
-            <div class="footer-style-1-inner">
-                <div class="widget-footer widget-link col-second col-medium">
-                    <p>盘子里的草莓，红白相间，和谐统一，犹如一幅名家的油画。
-                        <br>
-                        Copyright © 2019 Designed by ZTC&&ZXP. All rights reserved.
-                    </p>
-                </div>
-            </div>
+
+
         </div>
     </div>
 </footer>
+
+
 <div class="modal fade" id="quick-view-product" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg modal-quickview woocommerce" role="document">
         <div class="modal-content">
@@ -292,28 +281,6 @@
         </div>
     </div>
 </div>
-<script>
-
-    function delCart(cartId) {
-        $.ajax({
-            type: "get",
-            url: "/cart/delCart",
-            data: {"cartId": cartId},
-            dataType: "json",
-            success: function () {
-            }
-        });
-    }
-    function deleteCurrentRow(obj){
-        var tr=obj.parentNode.parentNode;
-        var tbody=tr.parentNode;
-        tbody.removeChild(tr);
-        //只剩行首时删除表格
-        if(tbody.rows.length==1) {
-            tbody.parentNode.removeChild(tbody);
-        }
-    }
-</script>
 <script src="js/library/jquery.min.js"></script>
 <script src="js/library/bootstrap.min.js"></script>
 <script src="js/function-check-viewport.js"></script>
@@ -332,6 +299,5 @@
 <script src="js/config-mm-menu.js"></script>
 </body>
 </html>
-
 
 
