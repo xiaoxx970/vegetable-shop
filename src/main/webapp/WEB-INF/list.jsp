@@ -50,7 +50,7 @@
 
     <!--      当窗口缩小到一定比例得时候 隐藏菜单-->
     <header class="header-style-1 static">
-        <div class="CCC">
+        <div class="container">
             <div class="row">
                 <div class="header-1-inner">
                     <a class="brand-logo animsition-link" href="../index.html">
@@ -112,6 +112,7 @@
     </section>
 
     <div class="woocommerce-top-control wrapper">
+
         <section class="boxed-xs">
             <div class="container">
                 <div class="row">
@@ -125,9 +126,10 @@
         </section>
     </div>
     <section class="boxed-sm">
-        <div class="CCC">
+        <div class="container">
             <div class="row main">
                 <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row">
+
                     <c:forEach items="${pagelist.data}" var="page">
                     <figure class="item">
                         <div class="product product-style-1">
@@ -167,7 +169,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-4 text-right">
+                    <div class="col-md-12 text-right">
                         <nav>
                             <ul class="pagination pagination-style-1">
                                 <c:choose>

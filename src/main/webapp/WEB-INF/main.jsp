@@ -221,7 +221,7 @@
                                                 </a>
                                             </div>
                                             <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                                <a class="animate-icon-cart" href="#">
+                                                <a class="animate-icon-cart" href="#" onclick="insertCart('${page.name}','${page.price}','${page.src}');return false">
                                                     <span class="lnr lnr-cart"></span>
                                                 </a>
                                                 <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
@@ -454,6 +454,21 @@
     _fresh()
     var sh;
     setInterval(_fresh, 10);
+</script>
+<script>
+    function  insertCart(name,price,src) {
+        $.ajax({
+            type:"GET",
+            url:"/cart/insertCart",
+            dataType:"json",
+            data: {"pName":name,"pPrice":price,"pSrc":src},
+            success:function(data){
+                alert("success")
+            },
+            error:function(jqXHR){
+                aler("发生错误：");
+            }});
+    }
 </script>
 <script src="../js/library/jquery.min.js"></script>
 <script src="../js/library/bootstrap.min.js"></script>

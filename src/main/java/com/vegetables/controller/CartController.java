@@ -46,9 +46,9 @@ public class CartController {
         }
     }
     @RequestMapping("/delCart")
-    public String delCart(Integer cartId){
+    @ResponseBody
+    public void delCart(Integer cartId){
         System.out.println(cartId) ;
         cartService.delCart(cartId);
-        return "redirect:/cart/findAllCart";
     }
 }

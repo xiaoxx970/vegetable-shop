@@ -100,9 +100,11 @@
         <div class="overlay-call-to-action"></div>
         <h3 class="heading-style-3">Shop Cart</h3>
     </section>
-    <section class="boxed-sm">
+    <section class="box-sm">
         <div class="container">
-            <div class="woocommerce">
+            <div class="row main">
+                <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row">
+
                 <form class="woocommerce-cart-form">
                     <table class="woocommerce-cart-table">
                         <thead>
@@ -133,7 +135,7 @@
                             <td class="product-price" data-title="Price">$${car.PPrice}</td>
                             <td class="product-subtotal" data-title="Total">$${car.PTotal}</td>
                             <td class="product-remove">
-                                <a class="remove" aria-label="Remove this item" href="/cart/delCart?cartId=${car.cartId}" >×</a>
+                                <a class="remove" aria-label="Remove this item" href="javascript:;" onclick=" delCart('${car.cartId}',deleteCurrentRow(this))" >×</a>
                             </td>
                         </tr>
                         </c:forEach>
@@ -155,6 +157,7 @@
                     </table>
                 </form>
             </div>
+        </div>
         </div>
     </section>
 </div>
@@ -301,6 +304,27 @@
     </div>
 </div>
 <script>
+function delCart(cartId,obj) {
+
+    $.ajax({
+        type: "get",
+        url: "/cart/delCart",
+        data: {"cartId": cartId},
+        dataType: "json",
+        success: function () {
+        }
+    });
+}
+    function deleteCurrentRow(obj){
+        var tr=obj.parentNode.parentNode;
+        var tbody=tr.parentNode;
+        tbody.removeChild(tr);
+        //只剩行首时删除表格
+        if(tbody.rows.length==1) {
+            tbody.parentNode.removeChild(tbody);
+        }
+    }
+
 
 </script>
 <script src="js/library/jquery.min.js"></script>
