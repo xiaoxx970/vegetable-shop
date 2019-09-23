@@ -30,4 +30,11 @@ public class CartServiceImpl implements CartService {
     public void delCart(int id) {
         cartMapper.delCart(id);
     }
+
+    @Override
+    public Integer  findAllCartName(String name , int parentId) {
+        boolean flag = false;
+        Integer i = cartMapper.findAllCartName(name, parentId);
+        return i;
+    }
 }

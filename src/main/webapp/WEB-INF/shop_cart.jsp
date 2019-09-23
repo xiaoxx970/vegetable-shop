@@ -31,10 +31,10 @@
     <nav id="menu">
         <ul>
             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
-            <li><a href="/selectList/seleAllShopList">商品列表</a></li>
+            <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
             <li><a href="../shop-detail.html">商品详情</a><li>
             <li><a href="../wish-list.html">愿望清单</a></li>
-            <li><a href="../shop-cart.html">购物车</a></li>
+            <li><a href="/cart/findAllCart">购物车</a></li>
             <li><a href="../check-out.html">结算</a></li>
         </ul>
     </nav>
@@ -48,10 +48,10 @@
                     <nav>
                         <ul class="menu hidden-xs">
                             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
-                            <li><a href="/selectList/seleAllShopList">商品列表</a></li>
+                            <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
                             <li><a href="../shop-detail.html">商品详情</a><li>
                             <li><a href="../wish-list.html">愿望清单</a></li>
-                            <li><a href="../shop-cart.html">购物车</a></li>
+                            <li><a href="/cart/findAllCart">购物车</a></li>
                             <li><a href="../check-out.html">结算</a></li>
                         </ul>
                     </nav>
@@ -121,7 +121,7 @@
                         <c:forEach items="${cart}" var="car" varStatus="count">
                         <tr>
                             <td class="product-thumbnail">
-                                <img src="${car.PSrc}" alt="product-thumbnail">
+                                <img src="${car.PSrc}" alt="product-thumbnail" width="75" height="75">
                             </td>
                             <td class="product-name" data-title="Product">
                                 <a class="product-name" href="#">${car.PName}</a>
@@ -133,7 +133,7 @@
                             <td class="product-price" data-title="Price">$${car.PPrice}</td>
                             <td class="product-subtotal" data-title="Total">$${car.PTotal}</td>
                             <td class="product-remove">
-                                <a class="remove" href="#" aria-label="Remove this item">×</a>
+                                <a class="remove" aria-label="Remove this item" href="/cart/delCart?cartId=${car.cartId}" >×</a>
                             </td>
                         </tr>
                         </c:forEach>
@@ -300,6 +300,9 @@
         </div>
     </div>
 </div>
+<script>
+
+</script>
 <script src="js/library/jquery.min.js"></script>
 <script src="js/library/bootstrap.min.js"></script>
 <script src="js/function-check-viewport.js"></script>

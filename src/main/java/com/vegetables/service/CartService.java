@@ -8,4 +8,5 @@ public interface CartService {
     void insertCart(Cart c);
     void changeCart(int id);
     void delCart(int id);
+    Integer  findAllCartName(String name,int parentId);
 }

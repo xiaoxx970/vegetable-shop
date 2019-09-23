@@ -8,7 +8,7 @@
     </insert>
 
     <update id="changeCart" parameterType="int">
-    update cart set quantity = quantity+1 where cart_id = #{arg0}
+    update cart set quantity = quantity+1 , p_total = p_total+p_price where cart_id = #{arg0}
     </update>
 
     <delete id="delCart" parameterType="int">
@@ -17,5 +17,9 @@
 
     <select id="findAllCart" parameterType="int" resultType="com.vegetables.pojo.Cart">
         select  cart_id cartId, p_name pName, p_price pPrice,quantity,p_total pTotal,p_src pSrc from cart where parent_id =#{arg0}
+    </select>
+
+    <select id="findAllCartName" resultType="Integer" >
+        select IFNULL(cart_id,0) from cart where p_name = #{arg0} and parent_id= #{arg1}
     </select>
 </mapper>

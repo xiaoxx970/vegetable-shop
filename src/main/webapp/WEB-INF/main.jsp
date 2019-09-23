@@ -40,7 +40,7 @@
             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
             <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
             <li><a href="../wish-list.html">愿望清单</a></li>
-            <li><a href="../shop-cart.html">购物车</a></li>
+            <li><a href="/cart/findAllCart">购物车</a></li>
             <li><a href="../check-out.html">结算</a></li>
         </ul>
     </nav>
@@ -56,7 +56,7 @@
                             <li><a href="/selectProduct/selectAllProduct">主页</a></li>
                             <li><a href="/selectList/seleAllShopList?currentPage=1">商品列表</a></li>
                             <li><a href="../wish-list.html">愿望清单</a></li>
-                            <li><a href="../shop-cart.html">购物车</a></li>
+                            <li><a href="/cart/findAllCart">购物车</a></li>
                             <li><a href="../check-out.html">结算</a></li>
                         </ul>
                     </nav>
